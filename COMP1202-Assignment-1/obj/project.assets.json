@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\simon\\source\\repos\\COMP1202-Assignment-1\\COMP1202-Assignment-1\\COMP1202-Assignment-1.csproj",
+      "projectUniqueName": "C:\\Users\\simon\\Dev\\COMP1202-Assignment-1\\COMP1202-Assignment-1\\COMP1202-Assignment-1.csproj",
       "projectName": "COMP1202-Assignment-1",
-      "projectPath": "C:\\Users\\simon\\source\\repos\\COMP1202-Assignment-1\\COMP1202-Assignment-1\\COMP1202-Assignment-1.csproj",
+      "projectPath": "C:\\Users\\simon\\Dev\\COMP1202-Assignment-1\\COMP1202-Assignment-1\\COMP1202-Assignment-1.csproj",
       "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\simon\\source\\repos\\COMP1202-Assignment-1\\COMP1202-Assignment-1\\obj\\",
+      "outputPath": "C:\\Users\\simon\\Dev\\COMP1202-Assignment-1\\COMP1202-Assignment-1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
