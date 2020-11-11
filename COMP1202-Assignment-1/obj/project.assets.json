@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\simon\\.nuget\\packages\\": {}
+    "C:\\Users\\bomba\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\simon\\Dev\\COMP1202-Assignment-1\\COMP1202-Assignment-1\\COMP1202-Assignment-1.csproj",
+      "projectUniqueName": "C:\\Users\\bomba\\Source\\Repos\\COMP1202-Assignment-1\\COMP1202-Assignment-1\\COMP1202-Assignment-1.csproj",
       "projectName": "COMP1202-Assignment-1",
-      "projectPath": "C:\\Users\\simon\\Dev\\COMP1202-Assignment-1\\COMP1202-Assignment-1\\COMP1202-Assignment-1.csproj",
-      "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\simon\\Dev\\COMP1202-Assignment-1\\COMP1202-Assignment-1\\obj\\",
+      "projectPath": "C:\\Users\\bomba\\Source\\Repos\\COMP1202-Assignment-1\\COMP1202-Assignment-1\\COMP1202-Assignment-1.csproj",
+      "packagesPath": "C:\\Users\\bomba\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bomba\\Source\\Repos\\COMP1202-Assignment-1\\COMP1202-Assignment-1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\simon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\bomba\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
