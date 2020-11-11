@@ -11,3 +11,16 @@ C:\Users\simon\Dev\COMP1202-Assignment-1\COMP1202-Assignment-1\obj\Debug\netcore
 C:\Users\simon\Dev\COMP1202-Assignment-1\COMP1202-Assignment-1\obj\Debug\netcoreapp3.1\COMP1202-Assignment-1.dll
 C:\Users\simon\Dev\COMP1202-Assignment-1\COMP1202-Assignment-1\obj\Debug\netcoreapp3.1\COMP1202-Assignment-1.pdb
 C:\Users\simon\Dev\COMP1202-Assignment-1\COMP1202-Assignment-1\obj\Debug\netcoreapp3.1\COMP1202-Assignment-1.genruntimeconfig.cache
+C:\Users\bomba\Source\Repos\COMP1202-Assignment-1\COMP1202-Assignment-1\obj\Debug\netcoreapp3.1\COMP1202-Assignment-1.csprojAssemblyReference.cache
+C:\Users\bomba\Source\Repos\COMP1202-Assignment-1\COMP1202-Assignment-1\obj\Debug\netcoreapp3.1\COMP1202-Assignment-1.AssemblyInfoInputs.cache
+C:\Users\bomba\Source\Repos\COMP1202-Assignment-1\COMP1202-Assignment-1\obj\Debug\netcoreapp3.1\COMP1202-Assignment-1.AssemblyInfo.cs
+C:\Users\bomba\Source\Repos\COMP1202-Assignment-1\COMP1202-Assignment-1\obj\Debug\netcoreapp3.1\COMP1202-Assignment-1.csproj.CoreCompileInputs.cache
+C:\Users\bomba\Source\Repos\COMP1202-Assignment-1\COMP1202-Assignment-1\obj\Debug\netcoreapp3.1\COMP1202-Assignment-1.dll
+C:\Users\bomba\Source\Repos\COMP1202-Assignment-1\COMP1202-Assignment-1\obj\Debug\netcoreapp3.1\COMP1202-Assignment-1.pdb
+C:\Users\bomba\Source\Repos\COMP1202-Assignment-1\COMP1202-Assignment-1\bin\Debug\netcoreapp3.1\COMP1202-Assignment-1.exe
+C:\Users\bomba\Source\Repos\COMP1202-Assignment-1\COMP1202-Assignment-1\bin\Debug\netcoreapp3.1\COMP1202-Assignment-1.deps.json
+C:\Users\bomba\Source\Repos\COMP1202-Assignment-1\COMP1202-Assignment-1\bin\Debug\netcoreapp3.1\COMP1202-Assignment-1.runtimeconfig.json
+C:\Users\bomba\Source\Repos\COMP1202-Assignment-1\COMP1202-Assignment-1\bin\Debug\netcoreapp3.1\COMP1202-Assignment-1.runtimeconfig.dev.json
+C:\Users\bomba\Source\Repos\COMP1202-Assignment-1\COMP1202-Assignment-1\bin\Debug\netcoreapp3.1\COMP1202-Assignment-1.dll
+C:\Users\bomba\Source\Repos\COMP1202-Assignment-1\COMP1202-Assignment-1\bin\Debug\netcoreapp3.1\COMP1202-Assignment-1.pdb
+C:\Users\bomba\Source\Repos\COMP1202-Assignment-1\COMP1202-Assignment-1\obj\Debug\netcoreapp3.1\COMP1202-Assignment-1.genruntimeconfig.cache

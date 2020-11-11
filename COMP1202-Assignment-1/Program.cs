@@ -73,7 +73,6 @@ namespace COMP1202_Assignment_1
             Console.ReadKey();
         }
 
-
         public static void addEvent()
         {
             string eventName, venue;
@@ -136,6 +135,52 @@ namespace COMP1202_Assignment_1
             Console.ReadKey();
         }
 
+        public static void addRSVP()
+        {
+            Console.Clear();
+            Console.WriteLine(eCoord.customerList());
+            Console.WriteLine("\n");
+            Console.WriteLine(eCoord.eventList());
+
+            int eventId, custId;
+
+            Console.WriteLine("-----------Add RSVP----------");
+            while (true)
+            {
+                Console.Write("Please enter the Event ID of the event:");
+                eventId = getIntChoice();
+                if (eCoord.isValidEvent(eventId)){ break; }
+                else{ Console.WriteLine("Please choose valid event");}
+            }
+
+            while (true)
+            {
+                Console.Write("Please enter the Customer ID of the customer:");
+                custId = getIntChoice();
+                if (eCoord.isValidCustomer(custId)) { break; }
+                else { Console.WriteLine("Please choose valid customer"); }
+            }
+
+            if (eCoord.addRSVP(eventId, custId))
+            {
+                Console.WriteLine("RSVP successfully added..");
+            }
+            else
+            {
+                Console.WriteLine("The RSVP was not added..");
+            }
+
+            Console.WriteLine("\nPress any key to continue return to the previous menu.");
+            Console.ReadKey();
+        }
+
+        public static void viewRSVP()
+        {
+            Console.Clear();
+            Console.WriteLine(eCoord.rsvpList());
+            Console.WriteLine("\nPress any key to continue return to the main menu.");
+            Console.ReadKey();
+        }
 
         public static string customerMenu()
         {
@@ -219,8 +264,8 @@ namespace COMP1202_Assignment_1
             int choice = getValidChoice(3, menu);
             while (choice != 3)
             {
-                if (choice == 1) { }
-                if (choice == 2) { }
+                if (choice == 1) { addRSVP(); }
+                if (choice == 2) { viewRSVP(); }
 
                 choice = getValidChoice(3, menu);
             }
