@@ -4,33 +4,33 @@ using System.Text;
 
 namespace COMP1202_Assignment_1
 {
-    class RSVP
+    class Booking
     {
         private string date;
         private int id;
-        private Event eve;
+        private Flight flight;
         private Customer cus;
 
-        public RSVP(int id, string date, Event eve, Customer cus)
+        public Booking(int id, string date, Flight flight, Customer cus)
         {
             this.id = id;
             this.date = date;
-            this.eve = eve;
+            this.flight = flight;
             this.cus = cus;
         }
 
         public int getId() { return this.id; }
         public string getDate() { return this.date; }
-        public Event getEvent() { return this.eve; }
+        public Flight getFlight() { return this.flight; }
         public Customer getCustomer() { return this.cus; }
         public override string ToString()
         {
-            int eventId = eve.getEventId();
+            int flightId = flight.getFlightId();
             string customerName = cus.getFirstName() + " " + cus.getLastName();
-            string s = "RSVP Id:" + this.id;
+            string s = "Booking Id:" + this.id;
             s += "\nDate" + this.date;
             s += "\nCustomer Name" + customerName;
-            s += "\nEvent Id:" + eventId;
+            s += "\nFlight Id:" + flightId;
             return s;
         }
     }

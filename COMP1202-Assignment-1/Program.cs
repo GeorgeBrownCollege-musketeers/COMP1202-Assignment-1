@@ -4,16 +4,16 @@ namespace COMP1202_Assignment_1
 {
     class Program
     {
-        static EventCoordinator eCoord;
+        static FlightCoordinator flightCoord;
 
         public static void deleteCustomer()
         {
             int id;
             Console.Clear();
-            Console.WriteLine(eCoord.customerList());
+            Console.WriteLine(flightCoord.customerList());
             Console.Write("Please enter a customer id to delete:");
             id = getIntChoice();
-            if (eCoord.deleteCustomer(id))
+            if (flightCoord.deleteCustomer(id))
             {
                 Console.WriteLine("Customer with id {0} deleted..", id);
             }
@@ -29,7 +29,7 @@ namespace COMP1202_Assignment_1
         public static void viewCustomers()
         {
             Console.Clear();
-            Console.WriteLine(eCoord.customerList());
+            Console.WriteLine(flightCoord.customerList());
             Console.WriteLine("\nPress any key to continue return to the main menu.");
             Console.ReadKey();
         }
@@ -39,11 +39,11 @@ namespace COMP1202_Assignment_1
             int id;
             string cust;
             Console.Clear();
-            Console.WriteLine(eCoord.customerList());
+            Console.WriteLine(flightCoord.customerList());
             Console.Write("Please enter a customer id to View:");
             id = getIntChoice();
             Console.Clear();
-            cust = eCoord.getCustomerInfoById(id);
+            cust = flightCoord.getCustomerInfoById(id);
             Console.WriteLine(cust);
             Console.WriteLine("\nPress any key to continue return to the previous menu.");
             Console.ReadKey();
@@ -61,7 +61,7 @@ namespace COMP1202_Assignment_1
             lname = Console.ReadLine();
             Console.Write("Please enter the customer's phone:");
             phone = Console.ReadLine();
-            if (eCoord.addCustomer(fname, lname, phone))
+            if (flightCoord.addCustomer(fname, lname, phone))
             {
                 Console.WriteLine("Customer successfully added..");
             }
@@ -73,158 +73,158 @@ namespace COMP1202_Assignment_1
             Console.ReadKey();
         }
 
-        public static void addEvent()
+        public static void addFlight()
         {
-            string eventName, venue;
-            Date eventDate;
-            int maxAttendees;
+            string flightName, venue;
+            Date flightDate;
+            int maxPassengers;
             int day, month, year, hour, minute;
 
             Console.Clear();
-            Console.WriteLine("-----------Add Event----------");
-            Console.Write("Please enter the name of the Event:");
-            eventName = Console.ReadLine();
-            Console.Write("Please enter venue for the event:");
+            Console.WriteLine("-----------Add Flights----------");
+            Console.Write("Please enter the name of the Flight:");
+            flightName = Console.ReadLine();
+            Console.Write("Please enter venue for the flight:");
             venue = Console.ReadLine();
-            Console.Write("Please enter the Day of the event:");
+            Console.Write("Please enter the Day of the flight:");
             day = getIntChoice();
-            Console.Write("Please enter the Month of the event (as an integer):");
+            Console.Write("Please enter the Month of the flight (as an integer):");
             month = getIntChoice();
-            Console.Write("Please enter the Year of the event:");
+            Console.Write("Please enter the Year of the flight:");
             year = getIntChoice();
-            Console.Write("Please enter the Hour the event starts in 24 hour format:");
+            Console.Write("Please enter the Hour the flight starts in 24 hour format:");
             hour = getIntChoice();
-            Console.Write("Please enter the Minute the event starts:");
+            Console.Write("Please enter the Minute the flight starts:");
             minute = getIntChoice();
-            eventDate = new Date(day, month, year, hour, minute);
-            Console.Write("Please enter the maximum number of attendees:");
-            maxAttendees = getIntChoice();
-            if (eCoord.addEvent(eventName, venue, eventDate, maxAttendees))
+            flightDate = new Date(day, month, year, hour, minute);
+            Console.Write("Please enter the maximum number of passengers:");
+            maxPassengers = getIntChoice();
+            if (flightCoord.addFlight(flightName, venue, flightDate, maxPassengers))
             {
-                Console.WriteLine("Event successfully added..");
+                Console.WriteLine("Flight successfully added..");
             }
             else
             {
-                Console.WriteLine("The event was not added..");
+                Console.WriteLine("The flight was not added..");
             }
             Console.WriteLine("\nPress any key to continue return to the main menu.");
             Console.ReadKey();
         }
 
 
-        public static void viewEvents()
+        public static void viewFlights()
         {
             Console.Clear();
-            Console.WriteLine(eCoord.eventList());
+            Console.WriteLine(flightCoord.flightList());
             Console.WriteLine("\nPress any key to continue return to the main menu.");
             Console.ReadKey();
         }
 
-        public static void viewSpecificEvent()
+        public static void viewSpecificFlight()
         {
             int id;
             string ev;
             Console.Clear();
-            Console.WriteLine(eCoord.eventList());
-            Console.Write("Please enter an event id to View:");
+            Console.WriteLine(flightCoord.flightList());
+            Console.Write("Please enter an flight id to View:");
             id = getIntChoice();
             Console.Clear();
-            ev = eCoord.getEventInfoById(id);
+            ev = flightCoord.getFlightInfoById(id);
             Console.WriteLine(ev);
             Console.WriteLine("\nPress any key to continue return to the previous menu.");
             Console.ReadKey();
         }
 
-        public static void addRSVP()
+        public static void makeBooking()
         {
             Console.Clear();
-            Console.WriteLine(eCoord.customerList());
+            Console.WriteLine(flightCoord.customerList());
             Console.WriteLine("\n");
-            Console.WriteLine(eCoord.eventList());
+            Console.WriteLine(flightCoord.flightList());
 
-            int eventId, custId;
+            int flightId, custId;
 
-            Console.WriteLine("-----------Add RSVP----------");
+            Console.WriteLine("-----------Make Booking----------");
             while (true)
             {
-                Console.Write("Please enter the Event ID of the event:");
-                eventId = getIntChoice();
-                if (eCoord.isValidEvent(eventId)){ break; }
-                else{ Console.WriteLine("Please choose valid event");}
+                Console.Write("Please enter the Flight ID of the flight:");
+                flightId = getIntChoice();
+                if (flightCoord.isValidFlight(flightId)){ break; }
+                else{ Console.WriteLine("Please choose valid flight");}
             }
 
             while (true)
             {
                 Console.Write("Please enter the Customer ID of the customer:");
                 custId = getIntChoice();
-                if (eCoord.isValidCustomer(custId)) { break; }
+                if (flightCoord.isValidCustomer(custId)) { break; }
                 else { Console.WriteLine("Please choose valid customer"); }
             }
 
-            if (eCoord.addRSVP(eventId, custId))
+            if (flightCoord.addBooking(flightId, custId))
             {
-                Console.WriteLine("RSVP successfully added..");
+                Console.WriteLine("Booking successfully added..");
             }
             else
             {
-                Console.WriteLine("The RSVP was not added..");
+                Console.WriteLine("The Booking was not added..");
             }
 
             Console.WriteLine("\nPress any key to continue return to the previous menu.");
             Console.ReadKey();
         }
 
-        public static void viewRSVP()
+        public static void viewBooking()
         {
             Console.Clear();
-            Console.WriteLine(eCoord.rsvpList());
+            Console.WriteLine(flightCoord.bookingList());
             Console.WriteLine("\nPress any key to continue return to the main menu.");
             Console.ReadKey();
         }
 
         public static string customerMenu()
         {
-            string s = "Andrew's Event Management Limited.\n";
+            string s = "Air Musketeers Limited.\n";
             s += "Customer Menu.\n";
             s += "Please select a choice from the menu below:\n";
             s += "1: Add Customer \n";
             s += "2: View Customers \n";
-            s += "3: View Customer Details \n";
-            s += "4: Delete Customer\n";
-            s += "5: Return to the main menu.";
-            return s;
-        }
-
-        public static string eventMenu()
-        {
-            string s = "Andrew's Event Management Limited.\n";
-            s += "Event Menu.\n";
-            s += "Please select a choice from the menu below:\n";
-            s += "1: Add Event \n";
-            s += "2: View all Events \n";
-            s += "3: View Event Details \n";
+            s += "3: Delete Customer\n";
             s += "4: Return to the main menu.";
             return s;
         }
 
-        public static string registrationMenu()
+        public static string flightMenu()
         {
-            string s = "Andrew's Event Management Limited.\n";
-            s += "Event Registration Menu.\n";
+            string s = "Air Musketeers Limited.\n";
+            s += "Flight Menu.\n";
             s += "Please select a choice from the menu below:\n";
-            s += "1: RSVP for event \n";
-            s += "2: View RSVPs \n";
+            s += "1: Add Flight  \n"; //Add Event
+            s += "2: View all Flights \n"; //View all Events
+            s += "3: View A Particular Flight \n"; //View Event Details
+            s += "4: Delete Flight \n";
+            s += "5: Return to the main menu.";
+            return s;
+        }
+
+        public static string bookingMenu()
+        {
+            string s = "Air Musketeers Limited.\n";
+            s += "Bookings Menu.\n";
+            s += "Please select a choice from the menu below:\n";
+            s += "1: Make Booking \n";
+            s += "2: View Bookings \n";
             s += "3: Return to the main menu.";
             return s;
         }
 
         public static string mainMenu()
         {
-            string s = "Andrew's Event Management Limited.\n";
+            string s = "Air Musketeers Limited.\n";
             s += "Please select a choice from the menu below:\n";
-            s += "1: Customer Options \n";
-            s += "2: Event Options \n";
-            s += "3: RSVP for Event \n";
+            s += "1: Customers \n";
+            s += "2: Flights \n"; //Event Options
+            s += "3: Bookings \n"; //RSVP for Event
             s += "4: Exit";
             return s;
         }
@@ -234,38 +234,57 @@ namespace COMP1202_Assignment_1
         {
             string menu = customerMenu();
             int choice = getValidChoice(5, menu);
-            while (choice != 5)
+            while (choice != 4)
             {
                 if (choice == 1) { addCustomer(); }
                 if (choice == 2) { viewCustomers(); }
-                if (choice == 3) { viewSpecificCustomer(); }
-                if (choice == 4) { deleteCustomer(); }
-                choice = getValidChoice(5, menu);
-            }
-        }
-
-        public static void runEventMenu()
-        {
-            string menu = eventMenu();
-            int choice = getValidChoice(4, menu);
-            while (choice != 4)
-            {
-                if (choice == 1) { addEvent(); }
-                if (choice == 2) { viewEvents(); }
-                if (choice == 3) { viewSpecificEvent(); }
-
+                if (choice == 3) { deleteCustomer(); }
                 choice = getValidChoice(4, menu);
             }
         }
 
-        public static void runRegistrationMenu()
+        public static void runFlightMenu()
         {
-            string menu = registrationMenu();
+            string menu = flightMenu();
+            int choice = getValidChoice(4, menu);
+            while (choice != 5)
+            {
+                if (choice == 1) { addFlight(); }
+                if (choice == 2) { viewFlights(); }
+                if (choice == 3) { viewSpecificFlight(); }
+                if (choice == 4) { deleteFlight(); }
+
+                choice = getValidChoice(5, menu);
+            }
+        }
+
+        private static void deleteFlight()
+        {
+            int id;
+            Console.Clear();
+            Console.WriteLine(flightCoord.customerList());
+            Console.Write("Please enter a flight id to delete:");
+            id = getIntChoice();
+            if (flightCoord.deleteFlight(id))
+            {
+                Console.WriteLine("Flight with id {0} deleted..", id);
+            }
+            else
+            {
+                Console.WriteLine("Flight with id {0} was not found..", id);
+            }
+            Console.WriteLine("\nPress any key to continue return to the main menu.");
+            Console.ReadKey();
+        }
+
+        public static void runBookingMenu()
+        {
+            string menu = bookingMenu();
             int choice = getValidChoice(3, menu);
             while (choice != 3)
             {
-                if (choice == 1) { addRSVP(); }
-                if (choice == 2) { viewRSVP(); }
+                if (choice == 1) { makeBooking(); }
+                if (choice == 2) { viewBooking(); }
 
                 choice = getValidChoice(3, menu);
             }
@@ -304,8 +323,8 @@ namespace COMP1202_Assignment_1
             while (choice != 4)
             {
                 if (choice == 1) { runCustomerMenu(); }
-                if (choice == 2) { runEventMenu(); }
-                if (choice == 3) { runRegistrationMenu(); }
+                if (choice == 2) { runFlightMenu(); }
+                if (choice == 3) { runBookingMenu(); }
 
                 choice = getValidChoice(4, menu);
             }
@@ -313,9 +332,9 @@ namespace COMP1202_Assignment_1
 
         static void Main(string[] args)
         {
-            eCoord = new EventCoordinator(200, 1000, 101, 5000);
+            flightCoord = new FlightCoordinator(200, 1000, 101, 5000);
             runProgram();
-            Console.WriteLine("Thank you for using Andrew's Event Management Limited System. ");
+            Console.WriteLine("Thank you for using Air Musketeers Limited System. ");
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
         }
