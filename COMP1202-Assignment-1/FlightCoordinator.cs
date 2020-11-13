@@ -47,6 +47,11 @@ namespace COMP1202_Assignment_1
             return flightMan.addFlight(name, venue, eventDate, maxPassenger);
         }
 
+        public bool deleteFlight(int fid)
+        {
+            return flightMan.deleteFlight(fid);
+        }
+
         public string flightList()
         {
             return flightMan.getFlightList();

@@ -262,7 +262,7 @@ namespace COMP1202_Assignment_1
         {
             int id;
             Console.Clear();
-            Console.WriteLine(flightCoord.customerList());
+            Console.WriteLine(flightCoord.flightList());
             Console.Write("Please enter a flight id to delete:");
             id = getIntChoice();
             if (flightCoord.deleteFlight(id))

@@ -24,7 +24,7 @@ namespace COMP1202_Assignment_1
             if (numFlights >= maxFlights) { return false; }
             Flight e = new Flight(currentFlightId, name, venue, flightDate, maxPassengers);
             flightList[numFlights] = e;
-            numFligths++;
+            numFlights++;
             currentFlightId++;
             return true;
         }
@@ -45,7 +45,7 @@ namespace COMP1202_Assignment_1
             if (loc == -1) { return false; }
             return true;
         }
-
+        
         public Flight getFlight(int fid)
         {
             int loc = findFlight(fid);

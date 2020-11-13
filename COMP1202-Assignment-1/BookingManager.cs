@@ -68,7 +68,7 @@ namespace COMP1202_Assignment_1
             s = s + "\nNumber \t Date \t\t\t Name \t\t Flight ID";
             for (int x = 0; x < numBooking; x++)
             {
-                s = s + "\n" + bookingList[x].getId() + "\t" + bookingList[x].getDate() +"\t"+bookingList[x].getCustomer().getFirstName() + " " + bookingList[x].getCustomer().getLastName() + "\t" + bookingList[x].getEvent().getEventId();
+                s = s + "\n" + bookingList[x].getId() + "\t" + bookingList[x].getDate() +"\t"+bookingList[x].getCustomer().getFirstName() + " " + bookingList[x].getCustomer().getLastName() + "\t" + bookingList[x].getFlight().getFlightId();
             }
             return s;
         }
