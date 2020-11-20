@@ -23,7 +23,6 @@ namespace COMP1202_Assignment_1
         {
             if (numBooking >= maxNumBooking) { return false; }
             string date = DateTime.Now.ToString(@"MM\/dd\/yyyy h\:mm tt");
-
             Booking b = new Booking(currentBookingNumber, date, flight, cus);
             currentBookingNumber++;
             bookingList[numBooking] = b;

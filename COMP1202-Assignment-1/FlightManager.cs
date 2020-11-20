@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System; 
 using System.Collections.Generic;
 using System.Text;
 
@@ -19,14 +19,29 @@ namespace COMP1202_Assignment_1
             flightList = new Flight[maxFlights];
         }
 
-        public bool addFlight(string name, string venue, Date flightDate, int maxPassengers)
+        public string addFlight(int fid, string name, string venue, Date flightDate, int maxPassengers)
         {
-            if (numFlights >= maxFlights) { return false; }
-            Flight e = new Flight(currentFlightId, name, venue, flightDate, maxPassengers);
+            String s = "";
+            if (numFlights > maxFlights && flightExists(fid) == false)
+            {
+                s = "Number of flights cannot be more than max flights and flight is already exist";
+                return s;
+            }
+            else if (numFlights > maxFlights && flightExists(fid) == true) {
+                s = "Number of flights number cannot be more than maximum flights!";
+                return s;
+            }
+            else if(numFlights < maxFlights && flightExists(fid) == false)
+            {
+                s = "Flight is not exist";
+                return s;
+            }
+            Flight e = new Flight(fid, name, venue, flightDate, maxPassengers);
             flightList[numFlights] = e;
             numFlights++;
             currentFlightId++;
-            return true;
+            s = $"Flight {name} with id of {fid} is successfully been added";
+            return s;
         }
 
         private int findFlight(int fid)

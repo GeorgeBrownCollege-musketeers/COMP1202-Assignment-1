@@ -18,8 +18,12 @@ namespace COMP1202_Assignment_1
         }
 
         //customer related methods
-        public bool addCustomer(string fname, string lname, string phone)
+        public bool addCustomer(int cid, string fname, string lname, string phone)
         {
+            if (custMan.customerExist(cid))
+            {
+                return false;
+            }
             return custMan.addCustomer(fname, lname, phone);
         }
 
@@ -41,15 +45,27 @@ namespace COMP1202_Assignment_1
             return custMan.customerExist(id);
         }
 
-        // Event related methods
-        public bool addFlight(string name, string venue, Date eventDate, int maxPassenger)
+        // Flight related methods
+        public string addFlight(int fid, string name, string venue, Date eventDate, int maxPassenger)
         {
-            return flightMan.addFlight(name, venue, eventDate, maxPassenger);
+            String s = "";
+            if (flightMan.flightExists(fid))
+                
+            {
+                s = "Flight you want to add is already exist";
+                return s;
+            }
+            return flightMan.addFlight(fid, name, venue, eventDate, maxPassenger);
         }
 
         public bool deleteFlight(int fid)
         {
-            return flightMan.deleteFlight(fid);
+            if (flightMan.flightExists(fid))
+            {
+                flightMan.deleteFlight(fid);
+                return true;
+            }
+            return false;
         }
 
         public string flightList()
@@ -67,7 +83,7 @@ namespace COMP1202_Assignment_1
             return flightMan.flightExists(id);
         }
 
-        //RSVP related Methods
+        //Booking related Methods
         public bool addBooking(int flightId, int custId)
         {
             Flight flight = flightMan.getFlight(flightId);
@@ -82,7 +98,13 @@ namespace COMP1202_Assignment_1
 
         public string getBookingInfoById(int id)
         {
-            return bookMan.getBookingInfo(id);
+            String s = "";
+            if (bookMan.bookingExist(id))
+            {
+                return bookMan.getBookingInfo(id);
+            }
+            s = "Booking is not exist";
+            return s;
         }
     }
 
