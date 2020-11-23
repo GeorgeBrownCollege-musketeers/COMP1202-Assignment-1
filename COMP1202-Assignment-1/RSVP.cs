@@ -23,6 +23,7 @@ namespace COMP1202_Assignment_1
         public string getDate() { return this.date; }
         public Event getEvent() { return this.eve; }
         public Customer getCustomer() { return this.cus; }
+
         public override string ToString()
         {
             int eventId = eve.getEventId();

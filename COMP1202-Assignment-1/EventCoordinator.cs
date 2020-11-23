@@ -49,7 +49,7 @@ namespace COMP1202_Assignment_1
 
         public string eventList()
         {
-            return eventMan.getEventList();
+            return eventMan.getEventList(rsvpMan);
         }
 
         public string getEventInfoById(int id)

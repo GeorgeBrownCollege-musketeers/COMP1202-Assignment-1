@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace COMP1202_Assignment_1
@@ -71,6 +72,28 @@ namespace COMP1202_Assignment_1
                 s = s + "\n" + rsvpList[x].getId() + "\t" + rsvpList[x].getDate() +"\t"+rsvpList[x].getCustomer().getFirstName() + " " + rsvpList[x].getCustomer().getLastName() + "\t" + rsvpList[x].getEvent().getEventId();
             }
             return s;
+        }
+
+        public Customer[] getCustomersForRSVP(int eventID) 
+        {
+            Customer[] custArr = new Customer[numRSVP];
+
+            int k = 1;
+            for (int i = 0; i < numRSVP; i++) 
+            {
+                if (rsvpList[i].getEvent().getEventId() == eventID) { k++; }
+            }
+
+            Customer[] answer = new Customer[k];
+
+            k = 0;
+            for (int i = 0; i < numRSVP; i++)
+            {
+                if (rsvpList[i].getEvent().getEventId() == eventID)  { answer[k++] = rsvpList[i].getCustomer(); }
+            }
+
+
+            return answer;
         }
     }
 }

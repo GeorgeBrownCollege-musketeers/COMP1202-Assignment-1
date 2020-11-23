@@ -19,9 +19,22 @@ namespace COMP1202_Assignment_1
             eventList = new Event[maxEvents];
         }
 
+        public bool checkEventAvailability(string venue, Date eventDate) // Returns true if it's available, otherwise false
+        {
+            for (int i = 0; i < numEvents; i++) {
+                if (eventList[i].getVenue() == venue && string.Compare(eventList[i].getEventDate().ToString(), eventDate.ToString()) == 0)
+                {
+                    return false;
+                }
+             }
+            return true;
+        }
+
         public bool addEvent(string name, string venue, Date eventDate, int maxAttendees)
         {
             if (numEvents >= maxEvents) { return false; }
+            if (!checkEventAvailability(venue, eventDate)) { return false; }
+            
             Event e = new Event(currentEventId, name, venue, eventDate, maxAttendees);
             eventList[numEvents] = e;
             numEvents++;
@@ -67,12 +80,17 @@ namespace COMP1202_Assignment_1
             if (loc == -1) { return "There is no event with id " + eid + "."; }
             return eventList[loc].ToString();
         }
-        public string getEventList()
+        public string getEventList(RSVPManager RSVPMan)
         {
-            string s = "Event List:";
+            string s = "Event List:\n";
+            s += "ID\tName\tVenue\tID of clients attending";
             for (int x = 0; x < numEvents; x++)
             {
-                s = s + "\n" + eventList[x].getEventId() + " \t " + eventList[x].getEventName() + " \t " + eventList[x].getVenue();
+                Customer[] customersForEvent = RSVPMan.getCustomersForRSVP(eventList[x].getEventId());
+                s = s + "\n" + eventList[x].getEventId() + " \t " + eventList[x].getEventName() + " \t " + eventList[x].getVenue() + " \t ";
+                foreach (Customer c in customersForEvent) {
+                    s += c.getFirstName() + " " + c.getId();
+                }
             }
             return s;
         }

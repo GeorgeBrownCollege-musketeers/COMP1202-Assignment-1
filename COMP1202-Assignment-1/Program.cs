@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Fatih Camgoz 101 266 304
+ * Simon Bermudez 101 250 449
+ * Oliver Kmiec 101 247 765
+ * Rahul Singla 101 229 794
+*/
+
+using System;
 
 namespace COMP1202_Assignment_1
 {
@@ -314,6 +321,16 @@ namespace COMP1202_Assignment_1
         static void Main(string[] args)
         {
             eCoord = new EventCoordinator(200, 1000, 101, 5000);
+            
+            eCoord.addCustomer("Simon", "Bermudez", "123456789");
+            eCoord.addCustomer("Fatih", "Camgoz", "123456789");
+            eCoord.addCustomer("Oliver", "Kmiec", "123456789");
+
+            eCoord.addEvent("Test", "1", new Date(1, 1, 1, 1, 1), 10);
+
+            eCoord.addRSVP(200,101);
+            eCoord.addRSVP(200, 102);
+
             runProgram();
             Console.WriteLine("Thank you for using Andrew's Event Management Limited System. ");
             Console.WriteLine("Press any key to exit.");

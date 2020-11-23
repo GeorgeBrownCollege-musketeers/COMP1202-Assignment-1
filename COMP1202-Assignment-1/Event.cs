@@ -34,6 +34,8 @@ namespace COMP1202_Assignment_1
         public int getMaxAttendees() { return maxAttendees; }
         public int getNumAttendees() { return numAttendees; }
 
+
+        public Date getEventDate() { return eventDate; }
         public bool addAttendee(Customer c)
         {
             if (numAttendees >= maxAttendees) { return false; }
